@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Buah List</string>
+    <string name="nama_buah">Nama Buah</string>
+    <string name="ket_buah">Keterangan Buah-Buahan</string>
+    <string name="more">More</string>
+    <string name="favorite">Favorite</string>
+    <string name="nur_imam_masri">NUR IMAM MASRI</string>
+    <string name="nurimammasri_08_gmail_com">nurimammasri.08@gmail.com</string>
+    <string name="rating">Rating</string>
+    <string name="list">List</string>
+    <string name="card_view">Card View</string>
+    <string name="grid_view">Grid View</string>
+    <string name="about">About</string>
+    <string name="sumber">Sumber</string>
+    <string name="URL">http://kampoengilmu.com/manfaat-buah/#44_Manfaat_Buah_Semangka</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="more_detail">More Detail</string>
+</resources>
