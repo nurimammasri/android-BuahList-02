@@ -24,7 +24,6 @@ public class MoreDetailFruits extends AppCompatActivity {
     TextView getRating;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +46,7 @@ public class MoreDetailFruits extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                if (is_favourite == false) {
+                if (!is_favourite) {
                     is_favourite = true;
                     ic_favourite.setColorFilter(Color.RED);
 
@@ -62,8 +61,8 @@ public class MoreDetailFruits extends AppCompatActivity {
         RatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float nilai, boolean b) {
-
-                getRating.setText("Rating: "+nilai);
+                String rate = "Rating: " + nilai;
+                getRating.setText(rate);
             }
         });
 

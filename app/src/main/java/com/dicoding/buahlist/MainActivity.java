@@ -11,6 +11,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dicoding.buahlist.Adapter.CardViewFruitAdapter;
+import com.dicoding.buahlist.Adapter.GridFruitAdapter;
+import com.dicoding.buahlist.Adapter.ListFruitAdapter;
+import com.dicoding.buahlist.Model.Fruit;
+import com.dicoding.buahlist.Model.FruitData;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private String title = "Mode List";
     //untuk deklarasi recycler view
     private RecyclerView rvFruits;
-    private ArrayList<Fruit> list = new  ArrayList<>();
+    private ArrayList<Fruit> list = new ArrayList<>();
 
 
     @Override

@@ -28,6 +28,7 @@
                 android:layout_width="140dp"
                 android:layout_height="140dp"
                 android:background="@drawable/background_image"
+                android:contentDescription="@string/imagebuah"
                 android:scaleType="fitXY" />
 
             <TextView
@@ -36,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:background="@drawable/bg_rating"
-                android:drawableRight="@drawable/ic_star_black_24dp"
+                android:drawableEnd="@drawable/ic_star_black_24dp"
                 android:drawablePadding="5dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:paddingHorizontal="8dp"
@@ -75,6 +76,7 @@
             android:justificationMode="inter_word"
             android:maxLines="5"
             android:textColor="@color/green01"
+            tools:ignore="UnusedAttribute"
             tools:text="@string/ket_buah" />
 
 
@@ -91,6 +93,7 @@
 
             <Button
                 android:id="@+id/more"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal"
@@ -102,6 +105,7 @@
 
             <Button
                 android:id="@+id/favorite"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal"

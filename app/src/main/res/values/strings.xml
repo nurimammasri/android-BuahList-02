@@ -5,7 +5,7 @@
     <string name="more">More</string>
     <string name="favorite">Favorite</string>
     <string name="nur_imam_masri">NUR IMAM MASRI</string>
-    <string name="nurimammasri_08_gmail_com">nurimammasri.08@gmail.com</string>
+    <string name="email">nurimammasri.08@gmail.com</string>
     <string name="rating">Rating</string>
     <string name="list">List</string>
     <string name="card_view">Card View</string>
@@ -15,4 +15,6 @@
     <string name="URL">http://kampoengilmu.com/manfaat-buah/#44_Manfaat_Buah_Semangka</string>
     <string name="deskripsi">Deskripsi</string>
     <string name="more_detail">More Detail</string>
+    <string name="imagebuah">imageBuah</string>
+    <string name="love">love</string>
 </resources>

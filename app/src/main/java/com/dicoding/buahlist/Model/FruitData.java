@@ -1,4 +1,6 @@
-package com.dicoding.buahlist;
+package com.dicoding.buahlist.Model;
+
+import com.dicoding.buahlist.R;
 
 import java.util.ArrayList;
 
@@ -641,7 +643,7 @@ public class FruitData {
     };
 
 
-    static ArrayList<Fruit> getListData() {
+    public static ArrayList<Fruit> getListData() {
         ArrayList<Fruit> list = new ArrayList<>();
         for (int position = 0; position < fruitNames.length; position++) {
             Fruit fruit = new Fruit();

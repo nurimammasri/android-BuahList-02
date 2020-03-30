@@ -16,7 +16,6 @@ public class GridView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_grid_fruit);
 
-
         tvRating = findViewById(R.id.rating);
 
         String metropolis = "metropolis.otf";

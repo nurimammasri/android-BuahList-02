@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="24dp"
         android:gravity="top"
         android:orientation="vertical">
@@ -31,10 +31,10 @@
             android:layout_marginBottom="8dp"
             android:gravity="center"
             android:text="@string/nur_imam_masri"
-            android:textStyle="bold"
-            android:typeface="serif"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
 
         <TextView
             android:id="@+id/tv_about_email"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_about_nama"
             android:gravity="center"
-            android:text="@string/nurimammasri_08_gmail_com"
+            android:text="@string/email"
             android:textColor="@color/green01" />
     </RelativeLayout>
 </ScrollView>

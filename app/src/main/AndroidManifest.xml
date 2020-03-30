@@ -16,8 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AboutActivity"></activity>
-        <activity android:name=".MoreDetailFruits"></activity>
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".MoreDetailFruits" />
+        <activity android:name=".CardView" />
+        <activity android:name=".GridView" />
     </application>
 
 </manifest>

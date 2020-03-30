@@ -28,6 +28,5 @@ public class AboutActivity extends AppCompatActivity {
         nama.setTypeface(font_metropolis);
 
 
-
     }
 }

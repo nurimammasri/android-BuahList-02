@@ -1,4 +1,4 @@
-package com.dicoding.buahlist;
+package com.dicoding.buahlist.Adapter;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -14,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.dicoding.buahlist.Model.Fruit;
+import com.dicoding.buahlist.MoreDetailFruits;
+import com.dicoding.buahlist.R;
 
 import java.util.ArrayList;
 
@@ -23,7 +26,6 @@ public class CardViewFruitAdapter extends RecyclerView.Adapter<CardViewFruitAdap
     public CardViewFruitAdapter(ArrayList<Fruit> list) {
         this.listFruit = list;
     }
-
 
 
     public interface OnItemClickCallback {
@@ -76,7 +78,7 @@ public class CardViewFruitAdapter extends RecyclerView.Adapter<CardViewFruitAdap
         holder.btnFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(holder.itemView.getContext(), listFruit.get(holder.getAdapterPosition()).getNamaBuah()+" telah ditambahkan dalam list Favorite Anda Favorite", Toast.LENGTH_SHORT).show();
+                Toast.makeText(holder.itemView.getContext(), listFruit.get(holder.getAdapterPosition()).getNamaBuah() + " telah ditambahkan dalam list Favorite Anda Favorite", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -101,8 +103,6 @@ public class CardViewFruitAdapter extends RecyclerView.Adapter<CardViewFruitAdap
     public int getItemCount() {
         return listFruit.size();
     }
-
-
 
 
     class CardViewViewHolder extends RecyclerView.ViewHolder {

@@ -1,4 +1,5 @@
-package com.dicoding.buahlist;
+package com.dicoding.buahlist.Adapter;
+
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -12,53 +13,73 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.dicoding.buahlist.Model.Fruit;
+import com.dicoding.buahlist.MoreDetailFruits;
+import com.dicoding.buahlist.R;
 
 import java.util.ArrayList;
 
-public class GridFruitAdapter extends RecyclerView.Adapter<GridFruitAdapter.GridViewHolder> {
+
+public class ListFruitAdapter extends RecyclerView.Adapter<ListFruitAdapter.ListViewHolder> {
+
     private ArrayList<Fruit> listFruit;
 
-    public GridFruitAdapter(ArrayList<Fruit> list) {
+    public ListFruitAdapter(ArrayList<Fruit> list) {
         this.listFruit = list;
+    }
+
+    //Untuk Ketika menekan Area List
+
+    //Objek OnItemClickCallBack
+    private OnItemClickCallback onItemClickCallback;
+
+    //Metode Set OnItemClickCallback
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
     }
 
     public interface OnItemClickCallback {
         void onItemClicked(Fruit data);
     }
 
-    private OnItemClickCallback onItemClickCallback;
-
-    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback;
-    }
-
     @NonNull
     @Override
-    public GridViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_grid_fruit, viewGroup, false);
-        return new GridViewHolder(view);
+    public ListViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_list_fruit, viewGroup, false);
+        return new ListViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final GridViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
         final Fruit fruit = listFruit.get(position);
+
+        //Holder Image
         Glide.with(holder.itemView.getContext())
-                .load(listFruit.get(position).getPhoto())
-                .apply(new RequestOptions().override(350, 550))
+                .load(fruit.getPhoto())
+                .apply(new RequestOptions().override(55, 55))
                 .into(holder.imgPhoto);
+        //Holder Nama Buah
+        holder.tvName.setText(fruit.getNamaBuah());
+        //Holder Detail Buah
+        holder.tvDetail.setText(fruit.getDetail());
+        //HolderRating Buah
         holder.tvRating.setText(fruit.getRating());
 
+
+        //Holder SetOnClick
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onItemClickCallback.onItemClicked(listFruit.get(holder.getAdapterPosition()));
 
+                //Intent Ke More Detail
                 Intent goToDetail = new Intent(v.getContext().getApplicationContext(), MoreDetailFruits.class);
+                //Mengirim Data
                 goToDetail.putExtra("FOTO", fruit.getPhoto());
                 goToDetail.putExtra("NAMA_BUAH", fruit.getNamaBuah());
                 goToDetail.putExtra("ABOUT", fruit.getMoreDetailBuah());
-                goToDetail.putExtra("DESKRIPSI", fruit. getDetail());
-                goToDetail.putExtra("RATING", fruit. getRating());
+                goToDetail.putExtra("DESKRIPSI", fruit.getDetail());
+                goToDetail.putExtra("RATING", fruit.getRating());
 
                 v.getContext().startActivity(goToDetail);
             }
@@ -66,21 +87,27 @@ public class GridFruitAdapter extends RecyclerView.Adapter<GridFruitAdapter.Grid
     }
 
 
-
     @Override
     public int getItemCount() {
         return listFruit.size();
     }
 
-    class GridViewHolder extends RecyclerView.ViewHolder {
-        ImageView imgPhoto;
-        TextView tvRating;
 
-        GridViewHolder(View itemView) {
+    class ListViewHolder extends RecyclerView.ViewHolder {
+        ImageView imgPhoto;
+        TextView tvName, tvDetail, tvRating;
+        //Buat Text format
+
+        ListViewHolder(View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.image_buah);
+            tvName = itemView.findViewById(R.id.nama);
+            tvDetail = itemView.findViewById(R.id.keterangan);
             tvRating = itemView.findViewById(R.id.rating);
+
         }
+
+
     }
 
 }
